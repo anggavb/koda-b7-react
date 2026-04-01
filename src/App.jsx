@@ -1,5 +1,4 @@
-import IncreaseCounter from "./components/IncreaseCounter"
-import DecreaseCounter from "./components/DecreaseCounter"
+import { IncreaseCounter, DecreaseCounter } from "./components"
 
 function App() {
   return (
