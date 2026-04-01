@@ -1,13 +1,6 @@
-import { useState } from "react"
-
-function DecreaseCounter() {
-  const [counter, setCount] = useState(10)
-  const incCounter = () => {
-    setCount(val => val > 0 ? val - 1 : val)
-  }
-
+function DecreaseCounter({set}) {
   return (
-    <button onClick={incCounter} className="bg-red-300 p-4 rounded-md border">Counter Reduce: {counter}</button>
+    <button onClick={set} className="bg-red-300 p-4 rounded-md border mx-auto self-start">Decrement Number</button>
   )
 }
 

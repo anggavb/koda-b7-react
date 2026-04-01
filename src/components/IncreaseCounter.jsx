@@ -1,13 +1,6 @@
-import { useState } from "react"
-
-function IncreaseCounter() {
-  const [counter, setCount] = useState(0)
-  const incCounter = () => {
-    setCount(val => val < 10 ? val + 1 : val)
-  }
-
+function IncreaseCounter({set}) {
   return (
-    <button onClick={incCounter} className="bg-green-300 p-4 rounded-md border">Counter Add: {counter}</button>
+    <button onClick={set} className="bg-green-300 p-4 rounded-md border mx-auto self-start">Increment Number</button>
   )
 }
 
