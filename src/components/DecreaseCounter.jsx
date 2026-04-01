@@ -3,7 +3,7 @@ import { useState } from "react"
 function DecreaseCounter() {
   const [counter, setCount] = useState(10)
   const incCounter = () => {
-    setCount(val => val > 0 ? val - 1 : val + 0)
+    setCount(val => val > 0 ? val - 1 : val)
   }
 
   return (
