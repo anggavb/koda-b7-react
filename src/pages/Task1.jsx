@@ -1,18 +1,13 @@
 import { useState } from "react"
-import { NumberCounter, IncreaseCounter, DecreaseCounter, Form, TableForm } from "./components"
+import { NumberCounter, IncreaseCounter, DecreaseCounter } from "../components"
 
-function App() {
+function Task1() {
   const [counter, setCounter] = useState(0)
   const incCounter = () => {
     setCounter(val => val < 10 ? val + 1 : val)
   }
   const decCounter = () => {
     setCounter(val => val > 0 ? val - 1 : val)
-  }
-
-  const [products, setForm] = useState([])
-  const submitProduct = (product) => {
-    setForm(data => [...data, ...[product]])
   }
 
   return (
@@ -23,11 +18,8 @@ function App() {
         <IncreaseCounter set={incCounter} />
         <DecreaseCounter set={decCounter} />
       </section>
-
-      <Form onSubmit={submitProduct} />
-      <TableForm products={products} />
     </main>
   )
 }
 
-export default App
+export default Task1

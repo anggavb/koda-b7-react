@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Pokemon, SearchPokemon } from "./components"
+import { Pokemon, SearchPokemon } from "../components"
 
 function Task3() {
   const [pokemon, setPokemon] = useState([])
