@@ -13,7 +13,7 @@ function TableForm({products}) {
           <tbody className="[&>*:nth-child(odd)]:bg-red-100 [&>*:nth-child(even)]:bg-blue-100">
             {
               products.map((row, index) => (
-                <tr>
+                <tr key={index}>
                   <td className="p-4">{index+1}</td>
                   <td className="p-4">{row.name}</td>
                   <td className="p-4">{row.price}</td>
