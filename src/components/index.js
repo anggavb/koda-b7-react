@@ -4,6 +4,7 @@ import NumberCounter from "./NumberCounter";
 import Form from "./Form";
 import TableForm from "./TableForm";
 import Pokemon from "./Pokemon";
+import SearchPokemon from "./SearchPokemon";
 
 export {
   IncreaseCounter,
@@ -11,5 +12,6 @@ export {
   NumberCounter,
   Form,
   TableForm,
-  Pokemon
+  Pokemon,
+  SearchPokemon
 }
