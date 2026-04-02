@@ -7,6 +7,8 @@ import Pokemon from "./Pokemon";
 import SearchPokemon from "./SearchPokemon";
 import Header from "./Header";
 import Footer from "./Footer";
+import ReviewCard from './ReviewCard';
+import ReviewList from './ReviewList';
 
 export {
   IncreaseCounter,
@@ -17,5 +19,7 @@ export {
   Pokemon,
   SearchPokemon,
   Header,
-  Footer
+  Footer,
+  ReviewCard,
+  ReviewList,
 }
