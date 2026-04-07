@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 
 function Task5Slug() {
-  const { id, _ } = useParams();
+  const { id, slug } = useParams();
   const [character, setCharacter] = useState(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function Task5Slug() {
     })();
   }, [id]);
   return (
-    <main className="p-6 flex flex-col items-center gap-8">
+    <main className="p-6 flex flex-col items-center gap-2">
       {character ? (
         <>
           <img
@@ -29,8 +29,24 @@ function Task5Slug() {
             className="w-48 h-48 rounded"
           />
           <h1 className="text-2xl font-bold">{character.name}</h1>
+          <p>Origin: {character.origin.name}</p>
           <p>Species: {character.species}</p>
+          <p>Gender: {character.gender}</p>
           <p>Status: {character.status}</p>
+          <p>
+            <Link
+              to={`/rick-and-morty/${id}/${slug}`}
+              className="underline text-blue-500"
+            >
+              View Profile
+            </Link>
+          </p>
+          <Link
+            to="/rick-and-morty"
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Back to Characters
+          </Link>
         </>
       ) : (
         <p>Loading...</p>
