@@ -1,4 +1,4 @@
-import { useFetch } from "../hooks";
+import { useFetch } from "@/hooks";
 
 function DataFetching() {
   const { data, isLoading, error } = useFetch(
