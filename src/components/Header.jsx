@@ -33,6 +33,12 @@ function Header() {
       >
         Rick and Morty
       </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "bg-amber-50" : "font-bold")}
+        to="/data-fetching"
+      >
+        Data Fetching
+      </NavLink>
     </nav>
   );
 }

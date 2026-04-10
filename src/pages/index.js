@@ -4,6 +4,7 @@ import Task3 from "./Task3";
 import Review from "./Review";
 import Task5 from "./Task5";
 import Task5Slug from "./Task5Slug";
+import DataFetching from "./DataFetching";
 
 export{
   Task1,
@@ -11,5 +12,6 @@ export{
   Task3,
   Review,
   Task5,
-  Task5Slug
+  Task5Slug,
+  DataFetching
 }

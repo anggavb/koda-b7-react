@@ -1,5 +1,13 @@
 import { Route, Routes } from "react-router";
-import { Task1, Task2, Task3, Review, Task5, Task5Slug } from "./pages";
+import {
+  Task1,
+  Task2,
+  Task3,
+  Review,
+  Task5,
+  Task5Slug,
+  DataFetching,
+} from "./pages";
 
 function AppRouter() {
   return (
@@ -12,6 +20,7 @@ function AppRouter() {
         <Route index element={<Task5 />} />
         <Route path=":id/:slug" element={<Task5Slug />} />
       </Route>
+      <Route path="/data-fetching" element={<DataFetching />} />
     </Routes>
   );
 }
