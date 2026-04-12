@@ -5,6 +5,7 @@ import Review from "./Review";
 import Task5 from "./Task5";
 import Task5Slug from "./Task5Slug";
 import DataFetching from "./DataFetching";
+import ContextManagement from "./ContextManagement";
 
 export{
   Task1,
@@ -13,5 +14,6 @@ export{
   Review,
   Task5,
   Task5Slug,
-  DataFetching
+  DataFetching,
+  ContextManagement
 }

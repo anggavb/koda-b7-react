@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { NavLink } from "react-router";
 
+import usersContext from "../contexts/users/context";
+
 function Header() {
+  const { usersState, usersDispatch } = useContext(usersContext);
+
   return (
     <nav className="flex justify-center items-center gap-8 *:px-2 *:py-4 bg-emerald-400 *:hover:bg-amber-50 *:cursor-pointer *:font-bold mb-4">
       <NavLink
@@ -39,6 +44,25 @@ function Header() {
       >
         Data Fetching
       </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "bg-amber-50" : "font-bold")}
+        to="/user-context"
+      >
+        User Context
+      </NavLink>
+
+      {usersState.username}
+      <button
+        onClick={() => usersDispatch({ type: "LOGOUT" })}
+        className={`bg-red-600 text-white hover:text-black ${usersState.username ? "block" : "hidden"}`}
+      >
+        Logout
+      </button>
+      <button
+        className={`bg-green-600 text-white hover:text-black ${usersState.username ? "hidden" : "block"}`}
+      >
+        Login
+      </button>
     </nav>
   );
 }

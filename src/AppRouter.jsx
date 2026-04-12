@@ -7,6 +7,7 @@ import {
   Task5,
   Task5Slug,
   DataFetching,
+  ContextManagement,
 } from "./pages";
 
 function AppRouter() {
@@ -21,6 +22,7 @@ function AppRouter() {
         <Route path=":id/:slug" element={<Task5Slug />} />
       </Route>
       <Route path="/data-fetching" element={<DataFetching />} />
+      <Route path="/user-context" element={<ContextManagement />} />
     </Routes>
   );
 }
