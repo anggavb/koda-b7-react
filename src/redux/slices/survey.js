@@ -5,7 +5,7 @@ const initialState = {
   lastId: 0
 };
 
-const usersSlice = createSlice({
+const surveySlice = createSlice({
   name: "survey",
   initialState,
   reducers: {
@@ -19,6 +19,6 @@ const usersSlice = createSlice({
   },
 });
 
-export const { add, del } = usersSlice.actions;
+export const { add, del } = surveySlice.actions;
 
-export default usersSlice.reducer;
+export default surveySlice.reducer;
