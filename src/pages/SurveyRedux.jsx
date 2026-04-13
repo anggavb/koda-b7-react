@@ -12,19 +12,25 @@ function SurveyRedux() {
   const onChangeForm = (e) => {
     if (e.target.type === "checkbox") {
       if (e.target.checked) {
-        setForm({
-          ...form,
-          cigarette: [...(form.cigarette || []), e.target.id],
+        setForm((prevState) => {
+          return {
+            ...prevState,
+            cigarette: [...(prevState.cigarette || []), e.target.id],
+          };
         });
-      } else {
-        setForm({
-          ...form,
-          cigarette: form.cigarette.filter((c) => c !== e.target.id),
-        });
+        return;
       }
+      setForm((prevState) => {
+        return {
+          ...prevState,
+          cigarette: prevState.cigarette.filter((c) => c !== e.target.id),
+        };
+      });
       return;
     }
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm((prevState) => {
+      return { ...prevState, [e.target.name]: e.target.value };
+    });
   };
 
   const handleSubmit = (e) => {
@@ -143,27 +149,40 @@ function SurveyRedux() {
         </div>
       </form>
 
-      <div className="w-full max-w-md mt-8">
-        {survey.survey.length ? (
-          survey.survey.map((s) => (
-            <div key={s.id} className="border">
-              <p>Name: {s.name}</p>
-              <p>Age: {s.age}</p>
-              <p>Gender: {s.gender}</p>
-              <p>Smoker: {s.smoker}</p>
-              <p>Cigarette: {s.cigarette?.join(", ")}</p>
-              <button
-                onClick={() => dispatch(del(s))}
-                className="bg-red-500 text-white py-1 px-2 rounded mt-2 mb-4"
-              >
-                Delete
-              </button>
-            </div>
-          ))
-        ) : (
-          <p>Data not found!</p>
-        )}
-      </div>
+      {survey.survey.length ? (
+        <table className="w-full max-w-md mt-8 bg-amber-100 border *:border">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Smoker</th>
+              <th>Cigarette</th>
+            </tr>
+          </thead>
+          {survey.survey.map((s) => (
+            <tbody>
+              <tr key={s.id}>
+                <td>{s.name}</td>
+                <td>{s.age}</td>
+                <td>{s.gender}</td>
+                <td>{s.smoker}</td>
+                <td>{s.cigarette?.join(", ")}</td>
+                <td>
+                  <button
+                    onClick={() => dispatch(del(s))}
+                    className="bg-red-500 text-white py-1 px-2 rounded mt-2 mb-4"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
+      ) : (
+        <p>Data not found!</p>
+      )}
     </div>
   );
 }
