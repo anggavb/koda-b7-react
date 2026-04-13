@@ -8,6 +8,7 @@ import {
   Task5Slug,
   DataFetching,
   ContextManagement,
+  SurveyRedux,
 } from "./pages";
 
 function AppRouter() {
@@ -23,6 +24,7 @@ function AppRouter() {
       </Route>
       <Route path="/data-fetching" element={<DataFetching />} />
       <Route path="/user-context" element={<ContextManagement />} />
+      <Route path="/survey" element={<SurveyRedux />} />
     </Routes>
   );
 }

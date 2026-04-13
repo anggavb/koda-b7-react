@@ -6,6 +6,7 @@ import Task5 from "./Task5";
 import Task5Slug from "./Task5Slug";
 import DataFetching from "./DataFetching";
 import ContextManagement from "./ContextManagement";
+import SurveyRedux from "./SurveyRedux";
 
 export{
   Task1,
@@ -15,5 +16,6 @@ export{
   Task5,
   Task5Slug,
   DataFetching,
-  ContextManagement
+  ContextManagement,
+  SurveyRedux
 }

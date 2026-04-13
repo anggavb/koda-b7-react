@@ -51,6 +51,13 @@ function Header() {
         User Context
       </NavLink>
 
+      <NavLink
+        className={({ isActive }) => (isActive ? "bg-amber-50" : "font-bold")}
+        to="/survey"
+      >
+        Survey
+      </NavLink>
+
       {usersState.username}
       <button
         onClick={() => usersDispatch({ type: "LOGOUT" })}
