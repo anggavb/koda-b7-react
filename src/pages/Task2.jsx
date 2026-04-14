@@ -11,8 +11,9 @@ function Task2() {
   const { getProductsThunk } = productActions;
 
   useEffect(() => {
+    if (products.length) return;
     dispatch(getProductsThunk());
-  }, [dispatch, getProductsThunk]);
+  }, [dispatch, getProductsThunk, products]);
 
   const submitProduct = (product) => {
     dispatch(productActions.toggleLoading());
